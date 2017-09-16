@@ -56,8 +56,7 @@ public class GildedRose {
                         item.quality = item.quality + 1;
                     }
                 } else if (item.name.equals(BACKSTAGE_PASSES_TO_A_TAFKAL80_ETC_CONCERT)) {
-                    if (item.quality > 0)
-                        item.quality = item.quality - 1;
+                    item.quality = 0;
                 } else if (item.name.equals(SULFURAS_HAND_OF_RAGNAROS)) {
                     ;
                 }

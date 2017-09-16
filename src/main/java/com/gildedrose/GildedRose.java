@@ -1,6 +1,6 @@
 package com.gildedrose;
 
-class GildedRose {
+public class GildedRose {
     Item[] items;
 
     public GildedRose(Item[] items) {
@@ -10,6 +10,8 @@ class GildedRose {
     public void updateQuality() {
         for (int i = 0; i < items.length; i++) {
             Item item = items[i];
+
+            /* Update quality for all items */
             if (!item.name.equals("Aged Brie")
                     && !item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
                 if (item.quality > 0) {
@@ -37,10 +39,16 @@ class GildedRose {
                 }
             }
 
+
+
+            /* Update sellIn for all items */
             if (!item.name.equals("Sulfuras, Hand of Ragnaros")) {
                 item.sellIn = item.sellIn - 1;
             }
 
+
+
+            /* Update quality of the items that update quality depending on the sellIn property */
             if (item.sellIn < 0) {
                 if (!item.name.equals("Aged Brie")) {
                     if (!item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
@@ -58,6 +66,8 @@ class GildedRose {
                     }
                 }
             }
+
+
         }
     }
 }

@@ -8,10 +8,8 @@ public class GildedRose {
     }
 
     public void updateQuality() {
-        for (int i = 0; i < items.length; i++) {
-            Item item = items[i];
-
-            /* Update quality for all items */
+        for (Item item : items) {
+            /* Update quality for all items except Aged Brie and Backstage passes */
             if (!item.name.equals("Aged Brie")
                     && !item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
                 if (item.quality > 0) {

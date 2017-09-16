@@ -65,4 +65,16 @@ public class GildedRoseTest {
         assertEquals(expectedQuality, item.quality);
     }
 
+    @Test
+    public void test_itemOutOfSellingPeriod_qualityIsDecreasedBy2() {
+        Item[] items = new Item[]{
+                new Item("Standard item A", -2, 10)};
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+
+        Item item = app.items[0];
+        int expectedQuality = 8;
+        assertThat(item.quality, is(expectedQuality));
+    }
+
 }

@@ -14,7 +14,10 @@ public class QualityUpdater {
 
     public void updateItemQuality() {
         item.sellIn--;
-        item.quality--;
+        if (outOfSellingPeriod())
+            item.quality -= 2;
+        else
+            item.quality--;
     }
 
     public static QualityUpdater classifyItem(Item item) {

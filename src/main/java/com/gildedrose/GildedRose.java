@@ -2,8 +2,6 @@ package com.gildedrose;
 
 public class GildedRose {
 
-    private final QualityUpdater qualityUpdater = new QualityUpdater();
-
     Item[] items;
 
     public GildedRose(Item[] items) {
@@ -12,7 +10,8 @@ public class GildedRose {
 
     public void updateQuality() {
         for (Item item : items) {
-            qualityUpdater.updateItemQuality(item);
+            QualityUpdater qualityUpdater = QualityUpdater.classifyItem(item);
+            qualityUpdater.updateItemQuality();
         }
     }
 

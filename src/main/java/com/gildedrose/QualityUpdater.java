@@ -19,22 +19,7 @@ public class QualityUpdater {
             item.sellIn--;
 
 
-        if (item.name.equals(BACKSTAGE_PASSES_TO_A_TAFKAL80_ETC_CONCERT)) {
-            if (item.quality < 50) {
-                item.quality = item.quality + 1;
-                if (item.sellIn < 11) {
-                    if (item.quality < 50) {
-                        item.quality = item.quality + 1;
-                    }
-                }
-
-                if (item.sellIn < 6) {
-                    if (item.quality < 50) {
-                        item.quality = item.quality + 1;
-                    }
-                }
-            }
-        } else if (item.name.equals(SULFURAS_HAND_OF_RAGNAROS)) {
+        if (item.name.equals(SULFURAS_HAND_OF_RAGNAROS)) {
 
         } else {
             item.quality = item.quality - 1; // Behaviour for a normal item
@@ -43,9 +28,7 @@ public class QualityUpdater {
 
         /* Update quality of the items that update quality depending on the sellIn property */
         if (item.sellIn < 0) {
-            if (item.name.equals(BACKSTAGE_PASSES_TO_A_TAFKAL80_ETC_CONCERT)) {
-                item.quality = 0;
-            } else if (item.name.equals(SULFURAS_HAND_OF_RAGNAROS)) {
+            if (item.name.equals(SULFURAS_HAND_OF_RAGNAROS)) {
                 ;
             }
         }
@@ -54,8 +37,8 @@ public class QualityUpdater {
     public static QualityUpdater classifyItem(Item item) {
         if (item.name.equals(AGED_BRIE))
             return new AgedBrieQualityUpdater(item);
-//        else if (item.name.equals(BACKSTAGE_PASSES_TO_A_TAFKAL80_ETC_CONCERT))
-//            return new BackstagePassQualityUpdater(item);
+        else if (item.name.equals(BACKSTAGE_PASSES_TO_A_TAFKAL80_ETC_CONCERT))
+            return new BackstagePassQualityUpdater(item);
 //        else if (item.name.equals(SULFURAS_HAND_OF_RAGNAROS))
 //            return new LegendaryItemQualityUpdater(item);
         else

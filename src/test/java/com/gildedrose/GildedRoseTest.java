@@ -53,4 +53,16 @@ public class GildedRoseTest {
         }
     }
 
+    @Test
+    public void test_backstagePassWithConcertImminent_theQualityIsIncreasedBy2() {
+        Item[] items = new Item[]{
+                new Item("Backstage passes to a TAFKAL80ETC concert", 3, 10)};
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+
+        Item item = app.items[0];
+        int expectedQuality = 13;
+        assertEquals(expectedQuality, item.quality);
+    }
+
 }

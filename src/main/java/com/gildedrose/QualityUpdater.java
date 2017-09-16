@@ -34,7 +34,7 @@ public class QualityUpdater {
         return item.quality < 50;
     }
 
-    protected boolean canBeSold() {
+    protected boolean outOfSellingPeriod() {
         return item.sellIn < 0;
     }
 }

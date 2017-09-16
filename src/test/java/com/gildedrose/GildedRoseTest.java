@@ -8,6 +8,8 @@ import static org.junit.Assert.assertThat;
 
 public class GildedRoseTest {
 
+    private GildedRose gildedRose;
+
     @Test
     public void test_itemWithDummyData_theNameOfTheCreatedItem() {
         Item[] items = new Item[]{new Item("nameOfTheItem", 0, 0)};
@@ -75,6 +77,30 @@ public class GildedRoseTest {
         Item item = app.items[0];
         int expectedQuality = 8;
         assertThat(item.quality, is(expectedQuality));
+    }
+
+    @Test
+    public void test_conjuredItem_qualityDecreaseAtDoubleSpeed() {
+        Item[] items = new Item[]{
+                new Item("Conjured Mana Cake", 4, 10)};
+        gildedRose = new GildedRose(items);
+        gildedRose.updateQuality();
+
+        Item manaCake = gildedRose.items[0];
+        int expectedQuality = 8;
+        assertThat(manaCake.quality, is(expectedQuality));
+    }
+
+    @Test
+    public void test_conjuredItemOutOfSellingPeriod_qualityDecreasedBy4() {
+        Item[] items = new Item[]{
+                new Item("Conjured Mana Cake", -2, 10)};
+        gildedRose = new GildedRose(items);
+        gildedRose.updateQuality();
+
+        Item manaCake = gildedRose.items[0];
+        int expectedQuality = 6;
+        assertThat(manaCake.quality, is(expectedQuality));
     }
 
 }

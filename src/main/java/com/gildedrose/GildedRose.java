@@ -9,7 +9,7 @@ public class GildedRose {
 
     public void updateQuality() {
         for (Item item : items) {
-            /* Update quality for all items except Aged Brie and Backstage passes */
+            /* Update quality for all items except Aged Brie and Backstage passes and legendary items */
             if (!item.name.equals("Aged Brie")
                     && !item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
                 if (item.quality > 0) {
@@ -39,7 +39,7 @@ public class GildedRose {
 
 
 
-            /* Update sellIn for all items */
+            /* Update sellIn for all items except legendary items */
             if (!item.name.equals("Sulfuras, Hand of Ragnaros")) {
                 item.sellIn = item.sellIn - 1;
             }

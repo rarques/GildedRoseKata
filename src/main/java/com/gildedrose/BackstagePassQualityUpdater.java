@@ -10,22 +10,22 @@ public class BackstagePassQualityUpdater extends QualityUpdater {
     public void updateItemQuality() {
         item.sellIn--;
 
-        if (item.quality < 50) {
+        if (canIncreaseQuality()) {
             item.quality++;
             if (item.sellIn < 11) {
-                if (item.quality < 50) {
+                if (canIncreaseQuality()) {
                     item.quality++;
                 }
             }
 
             if (item.sellIn < 6) {
-                if (item.quality < 50) {
+                if (canIncreaseQuality()) {
                     item.quality++;
                 }
             }
         }
 
-        if (item.sellIn < 0) {
+        if (canBeSold()) {
             if (item.name.equals(BACKSTAGE_PASSES_TO_A_TAFKAL80_ETC_CONCERT)) {
                 item.quality = 0;
             }

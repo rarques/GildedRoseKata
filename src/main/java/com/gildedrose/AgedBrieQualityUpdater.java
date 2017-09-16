@@ -19,11 +19,4 @@ public class AgedBrieQualityUpdater extends QualityUpdater {
         }
     }
 
-    private boolean canIncreaseQuality() {
-        return item.quality < 50;
-    }
-
-    private boolean canBeSold() {
-        return item.sellIn < 0;
-    }
 }

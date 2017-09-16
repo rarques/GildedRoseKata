@@ -29,4 +29,12 @@ public class QualityUpdater {
                 return new QualityUpdater(item);
         }
     }
+
+    protected boolean canIncreaseQuality() {
+        return item.quality < 50;
+    }
+
+    protected boolean canBeSold() {
+        return item.sellIn < 0;
+    }
 }

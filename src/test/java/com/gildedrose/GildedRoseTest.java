@@ -38,16 +38,16 @@ public class GildedRoseTest {
                 new Item("Backstage passes to a TAFKAL80ETC concert", 10, 49),
                 new Item("Backstage passes to a TAFKAL80ETC concert", 5, 49)};
 
-        GildedRoseBaseLine app = new GildedRoseBaseLine(baseLineItems);
-        GildedRose refactoredApp = new GildedRose(items);
+        GildedRoseBaseLine baseLine = new GildedRoseBaseLine(baseLineItems);
+        GildedRose gildedRose = new GildedRose(items);
 
-        app.updateQuality();
-        refactoredApp.updateQuality();
+        baseLine.updateQuality();
+        gildedRose.updateQuality();
 
         for (int itemIndex = 0; itemIndex < items.length; itemIndex++) {
-            assertThat(refactoredApp.items[itemIndex].name, is(app.items[itemIndex].name));
-            assertThat(refactoredApp.items[itemIndex].quality, is(app.items[itemIndex].quality));
-            assertThat(refactoredApp.items[itemIndex].sellIn, is(app.items[itemIndex].sellIn));
+            assertThat("Failing item: " + items[itemIndex].name, gildedRose.items[itemIndex].name, is(baseLine.items[itemIndex].name));
+            assertThat("Failing item quality: " + items[itemIndex].name, gildedRose.items[itemIndex].quality, is(baseLine.items[itemIndex].quality));
+            assertThat("Failing item sellIn: " + items[itemIndex].name, gildedRose.items[itemIndex].sellIn, is(baseLine.items[itemIndex].sellIn));
         }
     }
 

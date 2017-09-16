@@ -10,43 +10,67 @@ public class GildedRose {
     public void updateQuality() {
         for (Item item : items) {
 
-
-            /* Update quality for all items except Aged Brie and Backstage passes and legendary items */
-            if (!item.name.equals("Aged Brie")
-                    && !item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-                if (item.quality > 0) {
-                    if (!item.name.equals("Sulfuras, Hand of Ragnaros")) {
-                        item.quality = item.quality - 1;
-                    }
-                }
-            } else {
+            if (item.name.equals("Aged Brie")) {
+                if (item.quality < 50)
+                    item.quality = item.quality + 1;
+            } else if (item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
                 if (item.quality < 50) {
                     item.quality = item.quality + 1;
-
-                    if (item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-                        if (item.sellIn < 11) {
-                            if (item.quality < 50) {
-                                item.quality = item.quality + 1;
-                            }
+                    if (item.sellIn < 11) {
+                        if (item.quality < 50) {
+                            item.quality = item.quality + 1;
                         }
+                    }
 
-                        if (item.sellIn < 6) {
-                            if (item.quality < 50) {
-                                item.quality = item.quality + 1;
-                            }
+                    if (item.sellIn < 6) {
+                        if (item.quality < 50) {
+                            item.quality = item.quality + 1;
                         }
                     }
                 }
+            } else if (item.name.equals("Sulfuras, Hand of Ragnaros")) {
+
+            } else {
+                item.quality = item.quality - 1; // Behaviour for a normal item
             }
+
+
+//            if (!item.name.equals("Aged Brie")
+//                    && !item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
+//                if (item.quality > 0) {
+//                    if (item.name.equals("Sulfuras, Hand of Ragnaros"))
+//                        ;
+//                    else
+//                        item.quality = item.quality - 1; // Behaviour for a normal item
+//
+//                }
+//            } else {
+//                if (item.quality < 50) {
+//                    item.quality = item.quality + 1;
+//
+//                    if (item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
+//                        if (item.sellIn < 11) {
+//                            if (item.quality < 50) {
+//                                item.quality = item.quality + 1;
+//                            }
+//                        }
+//
+//                        if (item.sellIn < 6) {
+//                            if (item.quality < 50) {
+//                                item.quality = item.quality + 1;
+//                            }
+//                        }
+//                    }
+//                }
+//            }
 
 
 
             /* Update sellIn for all items except legendary items */
-            if (item.name.equals("Sulfuras, Hand of Ragnaros")) {
+            if (item.name.equals("Sulfuras, Hand of Ragnaros"))
                 ;
-            } else {
+            else
                 item.sellIn--;
-            }
 
 
 

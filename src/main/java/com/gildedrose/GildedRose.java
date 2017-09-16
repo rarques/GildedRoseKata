@@ -1,6 +1,9 @@
 package com.gildedrose;
 
 public class GildedRose {
+    public static final String AGED_BRIE = "Aged Brie";
+    public static final String BACKSTAGE_PASSES_TO_A_TAFKAL80_ETC_CONCERT = "Backstage passes to a TAFKAL80ETC concert";
+    public static final String SULFURAS_HAND_OF_RAGNAROS = "Sulfuras, Hand of Ragnaros";
     Item[] items;
 
     public GildedRose(Item[] items) {
@@ -10,10 +13,10 @@ public class GildedRose {
     public void updateQuality() {
         for (Item item : items) {
 
-            if (item.name.equals("Aged Brie")) {
+            if (item.name.equals(AGED_BRIE)) {
                 if (item.quality < 50)
                     item.quality = item.quality + 1;
-            } else if (item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
+            } else if (item.name.equals(BACKSTAGE_PASSES_TO_A_TAFKAL80_ETC_CONCERT)) {
                 if (item.quality < 50) {
                     item.quality = item.quality + 1;
                     if (item.sellIn < 11) {
@@ -28,46 +31,17 @@ public class GildedRose {
                         }
                     }
                 }
-            } else if (item.name.equals("Sulfuras, Hand of Ragnaros")) {
+            } else if (item.name.equals(SULFURAS_HAND_OF_RAGNAROS)) {
 
             } else {
                 item.quality = item.quality - 1; // Behaviour for a normal item
             }
 
 
-//            if (!item.name.equals("Aged Brie")
-//                    && !item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-//                if (item.quality > 0) {
-//                    if (item.name.equals("Sulfuras, Hand of Ragnaros"))
-//                        ;
-//                    else
-//                        item.quality = item.quality - 1; // Behaviour for a normal item
-//
-//                }
-//            } else {
-//                if (item.quality < 50) {
-//                    item.quality = item.quality + 1;
-//
-//                    if (item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-//                        if (item.sellIn < 11) {
-//                            if (item.quality < 50) {
-//                                item.quality = item.quality + 1;
-//                            }
-//                        }
-//
-//                        if (item.sellIn < 6) {
-//                            if (item.quality < 50) {
-//                                item.quality = item.quality + 1;
-//                            }
-//                        }
-//                    }
-//                }
-//            }
-
 
 
             /* Update sellIn for all items except legendary items */
-            if (item.name.equals("Sulfuras, Hand of Ragnaros"))
+            if (item.name.equals(SULFURAS_HAND_OF_RAGNAROS))
                 ;
             else
                 item.sellIn--;
@@ -75,21 +49,17 @@ public class GildedRose {
 
 
             /* Update quality of the items that update quality depending on the sellIn property */
+
             if (item.sellIn < 0) {
-                if (!item.name.equals("Aged Brie")) {
-                    if (!item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-                        if (item.quality > 0) {
-                            if (!item.name.equals("Sulfuras, Hand of Ragnaros")) {
-                                item.quality = item.quality - 1;
-                            }
-                        }
-                    } else {
-                        item.quality = item.quality - item.quality;
-                    }
-                } else {
+                if (item.name.equals(AGED_BRIE)) {
                     if (item.quality < 50) {
                         item.quality = item.quality + 1;
                     }
+                } else if (item.name.equals(BACKSTAGE_PASSES_TO_A_TAFKAL80_ETC_CONCERT)) {
+                    if (item.quality > 0)
+                        item.quality = item.quality - 1;
+                } else if (item.name.equals(SULFURAS_HAND_OF_RAGNAROS)) {
+                    ;
                 }
             }
 

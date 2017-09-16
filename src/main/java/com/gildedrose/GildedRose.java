@@ -16,7 +16,4 @@ public class GildedRose {
         }
     }
 
-    private void updateItemQuality(Item item) {
-        qualityUpdater.updateItemQuality(item);
-    }
 }

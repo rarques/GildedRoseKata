@@ -10,10 +10,9 @@ public class AgedBrieQualityUpdater extends QualityUpdater {
     public void updateItemQuality() {
         item.sellIn--;
 
-        if (canIncreaseQuality())
-            item.quality++;
-
         if (outOfSellingPeriod() && canIncreaseQuality())
+            item.quality += 2;
+        else if (canIncreaseQuality())
             item.quality++;
     }
 

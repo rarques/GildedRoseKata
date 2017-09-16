@@ -13,9 +13,17 @@ public class GildedRose {
     public void updateQuality() {
         for (Item item : items) {
 
+            /* Update sellIn for all items except legendary items */
+            if (item.name.equals(SULFURAS_HAND_OF_RAGNAROS))
+                ;
+            else
+                item.sellIn--;
+
+
             if (item.name.equals(AGED_BRIE)) {
-                if (item.quality < 50)
+                if (item.quality < 50) {
                     item.quality = item.quality + 1;
+                }
             } else if (item.name.equals(BACKSTAGE_PASSES_TO_A_TAFKAL80_ETC_CONCERT)) {
                 if (item.quality < 50) {
                     item.quality = item.quality + 1;
@@ -38,18 +46,7 @@ public class GildedRose {
             }
 
 
-
-
-            /* Update sellIn for all items except legendary items */
-            if (item.name.equals(SULFURAS_HAND_OF_RAGNAROS))
-                ;
-            else
-                item.sellIn--;
-
-
-
             /* Update quality of the items that update quality depending on the sellIn property */
-
             if (item.sellIn < 0) {
                 if (item.name.equals(AGED_BRIE)) {
                     if (item.quality < 50) {

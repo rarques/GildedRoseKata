@@ -18,13 +18,15 @@ public class QualityUpdater {
     }
 
     public static QualityUpdater classifyItem(Item item) {
-        if (item.name.equals(AGED_BRIE))
-            return new AgedBrieQualityUpdater(item);
-        else if (item.name.equals(BACKSTAGE_PASSES_TO_A_TAFKAL80_ETC_CONCERT))
-            return new BackstagePassQualityUpdater(item);
-        else if (item.name.equals(SULFURAS_HAND_OF_RAGNAROS))
-            return new LegendaryItemQualityUpdater(item);
-        else
-            return new QualityUpdater(item);
+        switch (item.name) {
+            case AGED_BRIE:
+                return new AgedBrieQualityUpdater(item);
+            case BACKSTAGE_PASSES_TO_A_TAFKAL80_ETC_CONCERT:
+                return new BackstagePassQualityUpdater(item);
+            case SULFURAS_HAND_OF_RAGNAROS:
+                return new LegendaryItemQualityUpdater(item);
+            default:
+                return new QualityUpdater(item);
+        }
     }
 }

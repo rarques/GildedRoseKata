@@ -11,16 +11,16 @@ public class BackstagePassQualityUpdater extends QualityUpdater {
         item.sellIn--;
 
         if (item.quality < 50) {
-            item.quality = item.quality + 1;
+            item.quality++;
             if (item.sellIn < 11) {
                 if (item.quality < 50) {
-                    item.quality = item.quality + 1;
+                    item.quality++;
                 }
             }
 
             if (item.sellIn < 6) {
                 if (item.quality < 50) {
-                    item.quality = item.quality + 1;
+                    item.quality++;
                 }
             }
         }

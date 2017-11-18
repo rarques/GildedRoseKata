@@ -14,7 +14,12 @@ public class QualityUpdater {
     }
 
     public static QualityUpdater classify(Item item) {
-        return new QualityUpdater(item);
+
+        if (item.name.equals("notCommonItem"))
+            throw new UnsupportedOperationException("Not implemented");
+        else
+            return new CommonQualityUpdater(item);
+
     }
 
     public void updateQuality() {

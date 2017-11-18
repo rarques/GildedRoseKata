@@ -1,8 +1,8 @@
 package com.gildedrose;
 
-import org.hamcrest.CoreMatchers;
 import org.junit.Test;
 
+import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 
@@ -28,9 +28,9 @@ public class GildedRoseTest {
         sut.updateQuality();
 
         Item updatedItem = sut.items[0];
-        assertThat(updatedItem.name, CoreMatchers.is("CommonItem"));
-        assertThat(updatedItem.quality, CoreMatchers.is(9));
-        assertThat(updatedItem.sellIn, CoreMatchers.is(4));
+        assertThat(updatedItem.name, is("CommonItem"));
+        assertThat(updatedItem.quality, is(9));
+        assertThat(updatedItem.sellIn, is(4));
     }
 
 }

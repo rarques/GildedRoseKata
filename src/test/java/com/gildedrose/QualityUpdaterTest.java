@@ -3,6 +3,7 @@ package com.gildedrose;
 import org.junit.Test;
 
 import static com.gildedrose.QualityUpdater.AGED_BRIE;
+import static com.gildedrose.QualityUpdater.BACKSTAGE_PASSES;
 import static com.gildedrose.QualityUpdater.SULFURAS_HAND_OF_RAGNAROS;
 import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.hamcrest.CoreMatchers.is;
@@ -35,6 +36,15 @@ public class QualityUpdaterTest {
         QualityUpdater sut = QualityUpdater.classify(item);
 
         assertThat(sut, is(instanceOf(SulfurasQualityUpdater.class)));
+    }
+
+    @Test
+    public void test_classifyBackstagePass_BackstagePassesQualityUpdater() throws Exception {
+        Item item = new Item(BACKSTAGE_PASSES, 10, 10);
+
+        QualityUpdater sut = QualityUpdater.classify(item);
+
+        assertThat(sut, is(instanceOf(BackstagePassesQualityUpdater.class)));
     }
 
 }

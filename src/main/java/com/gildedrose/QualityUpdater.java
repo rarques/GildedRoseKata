@@ -21,8 +21,6 @@ public class QualityUpdater {
             return new SulfurasQualityUpdater(item);
         else if (item.name.equals(BACKSTAGE_PASSES))
             return new BackstagePassesQualityUpdater(item);
-        else if (item.name.equals("notCommonItem"))
-            throw new UnsupportedOperationException("Not implemented");
         else
             return new CommonQualityUpdater(item);
 

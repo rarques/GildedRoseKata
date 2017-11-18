@@ -16,7 +16,6 @@ class GildedRose {
         for (Item item : items) {
 
 
-
             // AgedBrieUpdater
             if (!item.name.equals(AGED_BRIE)
                     && !item.name.equals(BACKSTAGE_PASSES)) {
@@ -25,13 +24,7 @@ class GildedRose {
                         item.quality = item.quality - 1;
                     }
                 }
-            }
-
-
-
-
-
-            else {
+            } else {
 
                 if (item.quality < 50) {
                     // AgedBrie update
@@ -55,12 +48,10 @@ class GildedRose {
             }
 
 
-
             // SulfurasUpdater
             if (!item.name.equals(SULFURAS_HAND_OF_RAGNAROS)) {
                 item.sellIn = item.sellIn - 1;
             }
-
 
 
             // Items out of selling date
@@ -69,7 +60,7 @@ class GildedRose {
                     if (!item.name.equals(BACKSTAGE_PASSES)) {
                         if (item.quality > 0) {
                             if (!item.name.equals(SULFURAS_HAND_OF_RAGNAROS)) {
-                                // NormalItemUpdate
+                                // CommonItemUpdate
                                 item.quality = item.quality - 1;
                             }
                         }

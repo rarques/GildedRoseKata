@@ -24,6 +24,7 @@ public class GildedRoseTest {
                 new Item("CommonItem", 5, 10)
         };
         GildedRose sut = new GildedRose(items);
+
         sut.updateQuality();
 
         Item updatedItem = sut.items[0];

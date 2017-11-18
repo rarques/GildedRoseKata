@@ -14,6 +14,10 @@ class GildedRose {
 
     public void updateQuality() {
         for (Item item : items) {
+
+
+
+            // AgedBrieUpdater
             if (!item.name.equals(AGED_BRIE)
                     && !item.name.equals(BACKSTAGE_PASSES)) {
                 if (item.quality > 0) {
@@ -21,11 +25,20 @@ class GildedRose {
                         item.quality = item.quality - 1;
                     }
                 }
-            } else {
+            }
+
+
+
+
+
+            else {
+
                 if (item.quality < 50) {
+                    // AgedBrie update
                     increaseQuality(item);
 
                     if (item.name.equals(BACKSTAGE_PASSES)) {
+                        // BackStageUpdater
                         if (item.sellIn < 11) {
                             if (item.quality < 50) {
                                 increaseQuality(item);
@@ -41,15 +54,22 @@ class GildedRose {
                 }
             }
 
+
+
+            // SulfurasUpdater
             if (!item.name.equals(SULFURAS_HAND_OF_RAGNAROS)) {
                 item.sellIn = item.sellIn - 1;
             }
 
+
+
+            // Items out of selling date
             if (item.sellIn < 0) {
                 if (!item.name.equals(AGED_BRIE)) {
                     if (!item.name.equals(BACKSTAGE_PASSES)) {
                         if (item.quality > 0) {
                             if (!item.name.equals(SULFURAS_HAND_OF_RAGNAROS)) {
+                                // NormalItemUpdate
                                 item.quality = item.quality - 1;
                             }
                         }

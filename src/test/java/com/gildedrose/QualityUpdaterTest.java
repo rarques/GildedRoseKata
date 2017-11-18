@@ -2,9 +2,11 @@ package com.gildedrose;
 
 import org.junit.Test;
 
+import static com.gildedrose.QualityUpdater.AGED_BRIE;
+import static com.gildedrose.QualityUpdater.SULFURAS_HAND_OF_RAGNAROS;
 import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
 
 public class QualityUpdaterTest {
 
@@ -19,11 +21,20 @@ public class QualityUpdaterTest {
 
     @Test
     public void test_classifyAgedBrie_AgedBrieUpdater() throws Exception {
-        Item item = new Item(QualityUpdater.AGED_BRIE, 10, 10);
+        Item item = new Item(AGED_BRIE, 10, 10);
 
         QualityUpdater sut = QualityUpdater.classify(item);
 
         assertThat(sut, is(instanceOf(AgedBrieQualityUpdater.class)));
+    }
+
+    @Test
+    public void test_classifySulfuras_SulfurasQualityUpdater() throws Exception {
+        Item item = new Item(SULFURAS_HAND_OF_RAGNAROS, 10, 10);
+
+        QualityUpdater sut = QualityUpdater.classify(item);
+
+        assertThat(sut, is(instanceOf(SulfurasQualityUpdater.class)));
     }
 
 }

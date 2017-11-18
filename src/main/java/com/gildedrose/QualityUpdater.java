@@ -17,6 +17,8 @@ public class QualityUpdater {
 
         if (item.name.equals(AGED_BRIE))
             return new AgedBrieQualityUpdater(item);
+        if (item.name.equals(SULFURAS_HAND_OF_RAGNAROS))
+            return new SulfurasQualityUpdater(item);
         else if (item.name.equals("notCommonItem"))
             throw new UnsupportedOperationException("Not implemented");
         else

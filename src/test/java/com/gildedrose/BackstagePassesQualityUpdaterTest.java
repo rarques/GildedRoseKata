@@ -2,10 +2,9 @@ package com.gildedrose;
 
 import org.junit.Test;
 
-import static com.gildedrose.QualityUpdater.AGED_BRIE;
 import static com.gildedrose.QualityUpdater.BACKSTAGE_PASSES;
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
 
 public class BackstagePassesQualityUpdaterTest {
 

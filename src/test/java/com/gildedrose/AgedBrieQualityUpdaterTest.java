@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import static com.gildedrose.QualityUpdater.AGED_BRIE;
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
 
 public class AgedBrieQualityUpdaterTest {
 

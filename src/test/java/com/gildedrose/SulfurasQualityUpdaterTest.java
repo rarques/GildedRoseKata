@@ -3,10 +3,9 @@ package com.gildedrose;
 import org.junit.Test;
 
 import static com.gildedrose.QualityUpdater.LEGENDARY_QUALITY;
-import static com.gildedrose.QualityUpdater.MAX_QUAILITY;
 import static com.gildedrose.QualityUpdater.SULFURAS_HAND_OF_RAGNAROS;
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
 
 public class SulfurasQualityUpdaterTest {
 

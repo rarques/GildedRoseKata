@@ -13,6 +13,6 @@ public class SulfurasQualityUpdater extends QualityUpdater {
 
     @Override
     public void updateQuality() {
-        item.quality = MAX_QUAILITY;
+        item.quality = LEGENDARY_QUALITY;
     }
 }

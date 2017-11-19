@@ -8,6 +8,7 @@ public abstract class QualityUpdater {
     public static final String SULFURAS_HAND_OF_RAGNAROS = "Sulfuras, Hand of Ragnaros";
 
     public static final int MAX_QUAILITY = 50;
+    public static final int LEGENDARY_QUALITY = 80;
 
     Item item;
 

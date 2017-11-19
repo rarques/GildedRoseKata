@@ -2,9 +2,7 @@ package com.gildedrose;
 
 import org.junit.Test;
 
-import static com.gildedrose.QualityUpdater.AGED_BRIE;
-import static com.gildedrose.QualityUpdater.BACKSTAGE_PASSES;
-import static com.gildedrose.QualityUpdater.SULFURAS_HAND_OF_RAGNAROS;
+import static com.gildedrose.QualityUpdater.*;
 import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
@@ -45,6 +43,25 @@ public class QualityUpdaterTest {
         QualityUpdater sut = QualityUpdater.classify(item);
 
         assertThat(sut, is(instanceOf(BackstagePassesQualityUpdater.class)));
+    }
+
+    @Test
+    public void test_classifyMagicItems_MAgicItemQualityUpdater() throws Exception {
+        Item item = new Item(MAGIC_ITEM, 10, 10);
+
+        QualityUpdater sut = QualityUpdater.classify(item);
+
+        assertThat(sut, is(instanceOf(MagicItemQualityUpdater.class)));
+    }
+
+    @Test
+    public void test_sellInDecreasesByOne() throws Exception {
+        Item item = new Item("CommonItem", 10, 10);
+        QualityUpdater sut = QualityUpdater.classify(item);
+
+        sut.update();
+
+        assertThat(item.sellIn, is(9));
     }
 
 }

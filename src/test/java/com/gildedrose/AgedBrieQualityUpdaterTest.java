@@ -31,7 +31,7 @@ public class AgedBrieQualityUpdaterTest {
     @Test
     public void sellInDecreasesByOne() throws Exception {
         Item item = new Item(AGED_BRIE, 10, 10);
-        CommonQualityUpdater sut = new CommonQualityUpdater(item);
+        AgedBrieQualityUpdater sut = new AgedBrieQualityUpdater(item);
 
         sut.updateQuality();
 

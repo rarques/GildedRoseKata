@@ -9,7 +9,6 @@ public class CommonQualityUpdater extends QualityUpdater {
     @Override
     public void updateQuality() {
         decreaseQuality();
-        item.sellIn--;
     }
 
     private void decreaseQuality() {

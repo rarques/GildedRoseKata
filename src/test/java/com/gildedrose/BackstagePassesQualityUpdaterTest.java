@@ -44,7 +44,7 @@ public class BackstagePassesQualityUpdaterTest {
         Item item = new Item(AGED_BRIE, 10, 10);
         BackstagePassesQualityUpdater sut = new BackstagePassesQualityUpdater(item);
 
-        sut.updateQuality();
+        sut.update();
 
         assertThat(item.sellIn, is(9));
     }

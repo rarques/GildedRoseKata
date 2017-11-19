@@ -9,7 +9,6 @@ public class AgedBrieQualityUpdater extends QualityUpdater {
     @Override
     public void updateQuality() {
         increaseQuality();
-        item.sellIn--;
     }
 
     private void increaseQuality() {

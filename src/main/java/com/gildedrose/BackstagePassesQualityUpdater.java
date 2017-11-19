@@ -14,7 +14,5 @@ public class BackstagePassesQualityUpdater extends QualityUpdater {
             item.quality++;
         if (item.sellIn <= 0)
             item.quality = 0;
-
-        item.sellIn--;
     }
 }

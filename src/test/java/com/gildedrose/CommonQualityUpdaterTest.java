@@ -32,7 +32,7 @@ public class CommonQualityUpdaterTest {
         Item item = new Item("CommonItem", 10, 10);
         CommonQualityUpdater sut = new CommonQualityUpdater(item);
 
-        sut.updateQuality();
+        sut.update();
 
         assertThat(item.sellIn, is(9));
     }

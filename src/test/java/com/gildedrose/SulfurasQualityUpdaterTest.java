@@ -24,7 +24,7 @@ public class SulfurasQualityUpdaterTest {
         Item item = new Item(SULFURAS_HAND_OF_RAGNAROS, 10, 50);
         SulfurasQualityUpdater sut = new SulfurasQualityUpdater(item);
 
-        sut.updateQuality();
+        sut.update();
 
         assertThat(item.sellIn, is(10));
     }

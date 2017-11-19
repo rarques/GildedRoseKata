@@ -33,7 +33,7 @@ public class AgedBrieQualityUpdaterTest {
         Item item = new Item(AGED_BRIE, 10, 10);
         AgedBrieQualityUpdater sut = new AgedBrieQualityUpdater(item);
 
-        sut.updateQuality();
+        sut.update();
 
         assertThat(item.sellIn, is(9));
     }

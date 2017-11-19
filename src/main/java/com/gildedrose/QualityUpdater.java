@@ -7,6 +7,8 @@ public class QualityUpdater {
     public static final String BACKSTAGE_PASSES = "Backstage passes to a TAFKAL80ETC concert";
     public static final String SULFURAS_HAND_OF_RAGNAROS = "Sulfuras, Hand of Ragnaros";
 
+    public static final int MAX_QUAILITY = 50;
+
     Item item;
 
     public QualityUpdater(Item item) {
@@ -15,11 +17,12 @@ public class QualityUpdater {
 
     public static QualityUpdater classify(Item item) {
 
-        if (item.name.equals(AGED_BRIE))
+        String name = item.name;
+        if (name.equals(AGED_BRIE))
             return new AgedBrieQualityUpdater(item);
-        else if (item.name.equals(SULFURAS_HAND_OF_RAGNAROS))
+        else if (name.equals(SULFURAS_HAND_OF_RAGNAROS))
             return new SulfurasQualityUpdater(item);
-        else if (item.name.equals(BACKSTAGE_PASSES))
+        else if (name.equals(BACKSTAGE_PASSES))
             return new BackstagePassesQualityUpdater(item);
         else
             return new CommonQualityUpdater(item);
@@ -39,7 +42,6 @@ public class QualityUpdater {
         } else {
 
             if (item.quality < 50) {
-                // AgedBrie update
                 increaseQuality(item);
 
                 if (item.name.equals(BACKSTAGE_PASSES)) {

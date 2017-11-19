@@ -13,6 +13,8 @@ public class AgedBrieQualityUpdater extends QualityUpdater {
     }
 
     private void increaseQuality() {
-        item.quality++;
+        if (item.quality < MAX_QUAILITY) {
+            item.quality += (item.sellIn <= 0) ? 2 : 1;
+        }
     }
 }

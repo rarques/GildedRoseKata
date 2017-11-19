@@ -18,4 +18,24 @@ public class AgedBrieQualityUpdaterTest {
         assertThat(item.quality, is(11));
     }
 
+    @Test
+    public void brieOutOfSellingPeriodIncreasesQualityByTwo() throws Exception {
+        Item item = new Item(AGED_BRIE, 0, 10);
+        AgedBrieQualityUpdater sut = new AgedBrieQualityUpdater(item);
+
+        sut.updateQuality();
+
+        assertThat(item.quality, is(12));
+    }
+
+    @Test
+    public void sellInDecreasesByOne() throws Exception {
+        Item item = new Item(AGED_BRIE, 10, 10);
+        CommonQualityUpdater sut = new CommonQualityUpdater(item);
+
+        sut.updateQuality();
+
+        assertThat(item.sellIn, is(9));
+    }
+
 }

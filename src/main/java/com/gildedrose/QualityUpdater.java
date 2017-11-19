@@ -7,7 +7,7 @@ public class QualityUpdater {
     public static final String BACKSTAGE_PASSES = "Backstage passes to a TAFKAL80ETC concert";
     public static final String SULFURAS_HAND_OF_RAGNAROS = "Sulfuras, Hand of Ragnaros";
 
-    private Item item;
+    Item item;
 
     public QualityUpdater(Item item) {
         this.item = item;
@@ -28,7 +28,7 @@ public class QualityUpdater {
 
     public void updateQuality() {
 
-        // AgedBrieUpdater
+        // CommonItemUpdater
         if (!item.name.equals(AGED_BRIE)
                 && !item.name.equals(BACKSTAGE_PASSES)) {
             if (item.quality > 0) {

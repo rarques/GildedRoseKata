@@ -27,4 +27,14 @@ public class CommonQualityUpdaterTest {
         assertThat(item.quality, is(0));
     }
 
+    @Test
+    public void sellInDecreasesByOne() throws Exception {
+        Item item = new Item("CommonItem", 10, 10);
+        CommonQualityUpdater sut = new CommonQualityUpdater(item);
+
+        sut.updateQuality();
+
+        assertThat(item.sellIn, is(9));
+    }
+
 }

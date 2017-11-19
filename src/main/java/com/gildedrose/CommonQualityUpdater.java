@@ -14,6 +14,9 @@ public class CommonQualityUpdater extends QualityUpdater {
 
     private void decreaseQuality() {
         if (item.quality > 0)
-            item.quality--;
+            if (item.sellIn == 0)
+                item.quality -= 2;
+            else
+                item.quality--;
     }
 }

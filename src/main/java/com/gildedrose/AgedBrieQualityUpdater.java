@@ -6,4 +6,13 @@ public class AgedBrieQualityUpdater extends QualityUpdater {
         super(item);
     }
 
+    @Override
+    public void updateQuality() {
+        increaseQuality();
+        item.sellIn--;
+    }
+
+    private void increaseQuality() {
+        item.quality++;
+    }
 }

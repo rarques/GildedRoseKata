@@ -31,11 +31,11 @@ public class QualityUpdater {
         // CommonItemUpdater
         if (!item.name.equals(AGED_BRIE)
                 && !item.name.equals(BACKSTAGE_PASSES)) {
-            if (item.quality > 0) {
-                if (!item.name.equals(SULFURAS_HAND_OF_RAGNAROS)) {
-                    item.quality = item.quality - 1;
-                }
-            }
+//            if (item.quality > 0) {
+//                if (!item.name.equals(SULFURAS_HAND_OF_RAGNAROS)) {
+//                    item.quality = item.quality - 1;
+//                }
+//            }
         } else {
 
             if (item.quality < 50) {
@@ -60,7 +60,7 @@ public class QualityUpdater {
         }
 
 
-        // SulfurasUpdater
+        // all except sulfuras updater
         if (!item.name.equals(SULFURAS_HAND_OF_RAGNAROS)) {
             item.sellIn = item.sellIn - 1;
         }

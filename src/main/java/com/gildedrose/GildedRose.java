@@ -9,9 +9,14 @@ class GildedRose {
     }
 
     public void updateQuality() {
+        System.out.println("Updating items in warehouse...");
         for (Item item : items) {
+            System.out.println("Updating item: " + item.name);
             QualityUpdater updater = QualityUpdater.classify(item);
             updater.update();
+            System.out.println("The item with name: " + item.name + " has been updated: " +
+                    "\nQuality: " + item.quality +
+                    "\nSellIn: " + item.sellIn);
         }
     }
 

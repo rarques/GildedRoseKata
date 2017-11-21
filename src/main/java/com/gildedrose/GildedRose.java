@@ -1,5 +1,6 @@
 package com.gildedrose;
 
+import java.text.MessageFormat;
 import java.util.ResourceBundle;
 
 class GildedRose {
@@ -12,14 +13,14 @@ class GildedRose {
     }
 
     public void updateQuality() {
-        System.out.println("Updating items in warehouse...");
+        System.out.println(i18n.getString("updating.items.in.warehouse"));
         for (Item item : items) {
-            System.out.println("Updating item: " + item.name);
+            System.out.println(MessageFormat.format(i18n.getString("updating.item.0"), item.name));
             QualityUpdater updater = QualityUpdater.classify(item);
             updater.update();
-            System.out.println("==> The item with name: " + item.name + " has been updated: ");
-            System.out.println("\t" + "Quality: " + item.quality);
-            System.out.println("\t" + "Sell-in: " + item.sellIn);
+            System.out.println(MessageFormat.format(i18n.getString("the.item.with.name.0.has.been.updated"), item.name));
+            System.out.println("\t" + MessageFormat.format(i18n.getString("quality.0"), item.quality));
+            System.out.println("\t" + MessageFormat.format(i18n.getString("sell.in.0"), item.sellIn));
         }
     }
 

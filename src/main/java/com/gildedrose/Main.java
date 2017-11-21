@@ -1,18 +1,16 @@
 package com.gildedrose;
 
-import java.util.ResourceBundle;
-
 /**
  * La classe internacionalitzada és la classe GildedRose
  *
- * @see GildedRose
  * @author rav3 ; rav3@alumnes.udl.cat
+ * @see GildedRose
  */
 public class Main {
 
     public static void main(String[] args) {
 
-        Item[] items = new Item[]{
+        Item[] items = new Item[] {
                 new Item("+5 Dexterity Vest", 10, 20),
                 new Item("Aged Brie", 2, 0),
                 new Item("Elixir of the Mongoose", 5, 7),

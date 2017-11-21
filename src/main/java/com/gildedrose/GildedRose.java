@@ -18,7 +18,8 @@ class GildedRose {
             System.out.println(MessageFormat.format(i18n.getString("updating.item.0"), item.name));
             QualityUpdater updater = QualityUpdater.classify(item);
             updater.update();
-            System.out.println(MessageFormat.format(i18n.getString("the.item.with.name.0.has.been.updated"), item.name));
+            System.out.println(MessageFormat.format(i18n.getString("the.item.with.name.0.has.been.updated"), item
+                    .name));
             System.out.println("\t" + MessageFormat.format(i18n.getString("quality.0"), item.quality));
             System.out.println("\t" + MessageFormat.format(i18n.getString("sell.in.0"), item.sellIn));
         }

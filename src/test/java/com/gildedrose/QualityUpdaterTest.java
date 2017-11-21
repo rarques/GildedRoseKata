@@ -47,7 +47,7 @@ public class QualityUpdaterTest {
 
     @Test
     public void test_classifyMagicItems_MAgicItemQualityUpdater() throws Exception {
-        Item item = new Item(MAGIC_ITEM, 10, 10);
+        Item item = new Item(CONJURED_MANA_CAKE, 10, 10);
 
         QualityUpdater sut = QualityUpdater.classify(item);
 

@@ -7,12 +7,12 @@ public class SulfurasQualityUpdater extends QualityUpdater {
     }
 
     @Override
-    public void update() {
-        updateQuality();
+    public void updateQuality() {
+        item.quality = LEGENDARY_QUALITY;
     }
 
     @Override
-    public void updateQuality() {
-        item.quality = LEGENDARY_QUALITY;
+    protected void decreaseSellIn() {
+        // Legendary items never expire!!
     }
 }

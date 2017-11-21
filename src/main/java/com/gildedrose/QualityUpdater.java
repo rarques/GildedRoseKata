@@ -35,9 +35,13 @@ public abstract class QualityUpdater {
 
     public void update() {
         updateQuality();
-        item.sellIn--;
+        decreaseSellIn();
     }
 
     protected abstract void updateQuality();
+
+    protected void decreaseSellIn() {
+        item.sellIn--;
+    }
 
 }
